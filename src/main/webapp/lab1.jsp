@@ -17,8 +17,7 @@
         <div class = "rectangle">
         <h2>Rectangle Calculator</h2>
         <img src ="img/rectangle.png">
-        <form id="calRec" name="calRec" method="POST" action="CalController?calType=rectangl">
-                  
+        <form id="calRec" name="calRec" method="POST" action="CalController?calType=rectangle">                  
                 
                 Enter Length<input type="text" id="len" name="length" value=""/><br><br>
             
