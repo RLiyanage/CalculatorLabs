@@ -20,10 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CalController", urlPatterns = {"/CalController"})
 public class CalController extends HttpServlet {
-
     
-    //private static final String DESTNATION = "/response.jsp";
-    //private static final String DESTNATION = "/lab3.jsp";
     private static final String CAL_TYPE_RECTANGLE ="rectangle";
     private static final String CAL_TYPE_CIRCLE ="circle";
     private static final String CAL_TYPE_TRIANGLE ="triangle";
@@ -45,8 +42,7 @@ public class CalController extends HttpServlet {
         String width = request.getParameter("width");
         String radius = request.getParameter("radius");
         String side1 = request.getParameter("triLength");
-        String side2= request.getParameter("triWidth");
-        //String destination = request.getParameter("desType");
+        String side2= request.getParameter("triWidth");        
         String destination = "/lab3.jsp";
        
         CalculatorService caculatorservice;
