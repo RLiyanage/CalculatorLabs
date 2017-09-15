@@ -23,7 +23,7 @@ public class CalController extends HttpServlet {
 
     
     //private static final String DESTNATION = "/response.jsp";
-    private static final String DESTNATION = "/lab3.jsp";
+    //private static final String DESTNATION = "/lab3.jsp";
     private static final String CAL_TYPE_RECTANGLE ="rectangle";
     private static final String CAL_TYPE_CIRCLE ="circle";
     private static final String CAL_TYPE_TRIANGLE ="triangle";
@@ -46,36 +46,32 @@ public class CalController extends HttpServlet {
         String radius = request.getParameter("radius");
         String side1 = request.getParameter("triLength");
         String side2= request.getParameter("triWidth");
-        String destination = request.getParameter("desType");
+        //String destination = request.getParameter("desType");
+        String destination = "/lab3.jsp";
+       
         CalculatorService caculatorservice;
 
         try {
             caculatorservice = new CalculatorService();              
-            if(calType.equalsIgnoreCase(CAL_TYPE_RECTANGLE)){
+            if (calType.equalsIgnoreCase(CAL_TYPE_RECTANGLE)) {
                String area = caculatorservice.calculateAreaOfRectangle(length,width);
                request.setAttribute("area", area);
                request.setAttribute("length", length);
                
-            }else if(calType.equalsIgnoreCase(CAL_TYPE_CIRCLE)){
+            } else if(calType.equalsIgnoreCase(CAL_TYPE_CIRCLE)){
                String areaOfCircle = caculatorservice.calculateAreaOfCircle(radius);
-               request.setAttribute("areaOfCircle",areaOfCircle);
-            }
-            else if(calType.equalsIgnoreCase(CAL_TYPE_TRIANGLE)){
+               request.setAttribute("areaOfCircle", areaOfCircle);
+ 
+            } else if(calType.equalsIgnoreCase(CAL_TYPE_TRIANGLE)){
                 String hypothenuseSide = caculatorservice.calculateHypotenuseOfTriangle(side1, side2);
-                request.setAttribute("side3",hypothenuseSide );
+                request.setAttribute("side3",hypothenuseSide);                
             }
         } catch (Exception e) {
             request.setAttribute("errorMsg", e.getMessage());
         }
         
-
-          RequestDispatcher  view = request.getRequestDispatcher(DESTNATION);
-          view.forward(request, response);  
-
-        
-        
-        
-        
+          RequestDispatcher  view = request.getRequestDispatcher(destination);
+          view.forward(request, response);        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

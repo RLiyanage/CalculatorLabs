@@ -14,7 +14,8 @@
     
     </head>
     <body>
-        <div class = "rectangle">
+        <div class = "container">
+            <div class ="module">
         <h2>Rectangle Calculator</h2>
         <img src ="img/rectangle.png">
             <form id="calRec" name="calRec" method="POST" action="CalController?calType=rectangle">                  
@@ -23,10 +24,12 @@
             
                 Enter  Width<input type ="text" id="wid" name ="width"value =""><br>
             
-                <input type="submit"  name="submit" value="Calculate"/>
+                <input class = "but" type="submit"  name="submit" value="Calculate"/>
             </form>
         </div>
         <h3> Results</h3>
         <p>Area of rectangle is :${area}</p>
+        </div>
+        </div>
     </body>
 </html>
